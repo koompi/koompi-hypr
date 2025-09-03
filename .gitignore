@@ -1,0 +1,41 @@
+# Cache and temporary files
+*.cache
+*.tmp
+*.log
+*.swp
+*.bak
+*~
+
+# Personal files
+custom/personal.conf
+custom/secrets.conf
+
+# Generated files
+hyprland.log
+hyprlandCrashReport*.txt
+
+# Wallpaper symlinks/personal images
+Pictures/
+wallpapers/
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.backup
+*.old
+
+# Session files
+.session
+
+# Any user-specific overrides
+local.conf
+
+.claude
+CLAUDE.md

@@ -1,0 +1,108 @@
+* {
+    bg: rgba(24, 24, 24, 0.95);
+    fg: #ffffff;
+    accent: #89b4fa;
+    urgent: #f38ba8;
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 700px;
+    background-color: @bg;
+    border-radius: 20px;
+    border: 2px solid @accent;
+}
+
+mainbox {
+    children: [inputbar, message, listview, mode-switcher];
+    spacing: 20px;
+    padding: 30px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px 20px;
+}
+
+prompt {
+    enabled: true;
+    text-color: @accent;
+    font: "SF Pro Display 14";
+    padding: 0 10px 0 0;
+}
+
+entry {
+    placeholder: "Type command or search...";
+    placeholder-color: rgba(255, 255, 255, 0.3);
+    font: "SF Pro Display 14";
+    cursor: text;
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+    spacing: 10px;
+    scrollbar: false;
+    fixed-height: false;
+    dynamic: true;
+}
+
+element {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 2px solid transparent;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+    border: 2px solid @accent;
+}
+
+element-text {
+    font: "SF Pro Display 13";
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 15px 0 0;
+}
+
+mode-switcher {
+    spacing: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-color: @fg;
+    border-radius: 8px;
+}
+
+button selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+message {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+textbox {
+    text-color: @fg;
+    font: "SF Pro Display 12";
+}
