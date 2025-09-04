@@ -25,11 +25,14 @@ A modern, elegant Hyprland configuration optimized for productivity and aestheti
 
 ## 🎯 Requirements
 
-### Minimum System Requirements
-- **GPU**: Intel integrated or dedicated NVIDIA/AMD card
-- **RAM**: 8GB minimum, 16GB recommended
-- **Display**: Any resolution (optimized for 4K + 1080p dual setup)
-- **OS**: Linux with Wayland support
+### System Requirements
+- **GPU**: Any modern GPU with OpenGL support (Intel integrated, NVIDIA, AMD)
+- **RAM**: 2GB minimum, 4GB recommended for smooth experience
+- **CPU**: Any modern x86_64 processor (Intel/AMD from ~2010+)
+- **Display**: Any resolution (1080p to 4K+, single or multi-monitor)
+- **OS**: Linux distribution with Wayland support
+
+**Note**: Hyprland is lightweight and runs well on older hardware. This configuration is optimized for performance across low to high-end systems.
 
 ### Supported Distributions
 - ✅ **Arch Linux** (and derivatives: Manjaro, EndeavourOS, ArcoLinux)
@@ -42,13 +45,13 @@ A modern, elegant Hyprland configuration optimized for productivity and aestheti
 ## 🚀 One-Line Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/your-repo/koompi-hyprland/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/koompi/koompi-hypr/main/install.sh | bash
 ```
 
 Or download and run manually:
 ```bash
-git clone https://github.com/your-repo/koompi-hyprland.git
-cd koompi-hyprland
+git clone https://github.com/koompi/koompi-hypr.git
+cd koompi-hypr
 chmod +x install.sh
 ./install.sh
 ```
@@ -89,9 +92,9 @@ sudo dnf install hyprland waybar dunst hyprpaper kitty thunar firefox \
 [ -d ~/.config/hypr ] && mv ~/.config/hypr ~/.config/hypr.backup.$(date +%s)
 
 # Clone and install
-git clone https://github.com/your-repo/koompi-hyprland.git ~/koompi-hyprland
-cp -r ~/koompi-hyprland/.config/hypr ~/.config/
-cp -r ~/koompi-hyprland/.config/waybar ~/.config/
+git clone https://github.com/koompi/koompi-hypr.git ~/koompi-hypr
+cp -r ~/koompi-hypr/.config/hypr ~/.config/
+cp -r ~/koompi-hypr/.config/waybar ~/.config/
 
 # Set permissions
 chmod +x ~/.config/hypr/scripts/*.sh
@@ -254,8 +257,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ### Development Setup
 ```bash
-git clone https://github.com/your-repo/koompi-hyprland.git
-cd koompi-hyprland
+git clone https://github.com/koompi/koompi-hypr.git
+cd koompi-hypr
 
 # Make changes and test
 ./test-config.sh
@@ -276,8 +279,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/your-repo/koompi-hyprland/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/your-repo/koompi-hyprland/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/koompi/koompi-hypr/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/koompi/koompi-hypr/discussions)
 - 📧 **Email**: support@koompi.com
 
 ---

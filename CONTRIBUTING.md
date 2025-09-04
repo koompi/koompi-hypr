@@ -39,13 +39,13 @@ Feature requests are welcome! Please:
 
 1. **Fork the repository**
    ```bash
-   git fork https://github.com/your-repo/koompi-hyprland.git
+   git fork https://github.com/koompi/koompi-hypr.git
    ```
 
 2. **Clone your fork**
    ```bash
-   git clone https://github.com/your-username/koompi-hyprland.git
-   cd koompi-hyprland
+   git clone https://github.com/your-username/koompi-hypr.git
+   cd koompi-hypr
    ```
 
 3. **Create a development branch**
@@ -137,7 +137,7 @@ style(waybar): improve color consistency
 ## 📁 Project Structure
 
 ```
-koompi-hyprland/
+koompi-hypr/
 ├── .config/
 │   ├── hypr/                  # Hyprland configuration
 │   │   ├── hyprland.conf      # Main config file

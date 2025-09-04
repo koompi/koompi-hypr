@@ -17,8 +17,8 @@ WHITE='\033[1;37m'
 NC='\033[0m' # No Color
 
 # Configuration
-REPO_URL="https://github.com/your-repo/koompi-hyprland.git"
-INSTALL_DIR="$HOME/koompi-hyprland"
+REPO_URL="https://github.com/koompi/koompi-hypr.git"
+INSTALL_DIR="$HOME/koompi-hypr"
 BACKUP_DIR="$HOME/.config/hypr.backup.$(date +%s)"
 
 # Logo
@@ -312,8 +312,8 @@ show_completion() {
     echo "• Backup: $BACKUP_DIR"
     echo ""
     echo -e "${GREEN}Support:${NC}"
-    echo "• Documentation: https://github.com/your-repo/koompi-hyprland"
-    echo "• Issues: https://github.com/your-repo/koompi-hyprland/issues"
+    echo "• Documentation: https://github.com/koompi/koompi-hypr"
+    echo "• Issues: https://github.com/koompi/koompi-hypr/issues"
     echo ""
     echo -e "${PURPLE}Enjoy your new desktop environment! 🚀${NC}"
 }
