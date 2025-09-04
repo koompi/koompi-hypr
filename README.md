@@ -1,181 +1,267 @@
-# KOOMPI Hyprland Configuration
+# 🚀 KOOMPI Hyprland Desktop Environment
 
-A modern, minimalist Hyprland configuration featuring beautiful aesthetics, smooth animations, and powerful productivity features.
+A modern, elegant Hyprland configuration optimized for productivity and aesthetics. Features a beautiful Waybar with rainbow animations, compact macOS-style spacing, and comprehensive system monitoring.
 
-![Hyprland Version](https://img.shields.io/badge/Hyprland-0.50.1-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Platform](https://img.shields.io/badge/Platform-Linux-orange)
+![Preview](https://img.shields.io/badge/Hyprland-Modern-blue?style=for-the-badge&logo=wayland)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Wayland](https://img.shields.io/badge/Wayland-Ready-purple?style=for-the-badge)
 
 ## ✨ Features
 
-- **Modern Glass Morphism Design** - Beautiful blur effects and transparency
-- **Smooth Animations** - Carefully tuned bezier curves for fluid motion
-- **Smart Window Management** - Automatic workspace assignments and tiling
-- **Multiple Launcher Options** - Rofi with custom themes (launchpad, command palette, spotlight)
-- **Productivity Tools** - Clipboard history, emoji picker, quick actions menu
-- **Eye Comfort** - Built-in blue light filter shader
-- **Performance Optimized** - Special rules for games and resource-intensive apps
+- **🌈 Rainbow Border Animation** - Matching Hyprland window borders
+- **📊 System Monitoring** - CPU, Memory, Temperature, Battery with colorful indicators  
+- **🎨 Glass Morphism UI** - Modern transparent design with subtle effects
+- **⚡ Performance Optimized** - Smooth animations for Intel Xeon + NVIDIA Quadro
+- **🔧 Professional Workflow** - Vim-style keybindings and workspace management
+- **📱 macOS-Style Compact Layout** - Clean, space-efficient design
 
-## 📸 Screenshots
+## 🖥️ Screenshots
 
-<details>
-<summary>Click to view screenshots</summary>
+```
+┌─────────────────────────────────────────────────────────────┐
+│  🏠  Workspace  Window Title     🕐 Time     📊 CPU 󰍛 RAM 🌡️ Temp 󰃞 BRI 󰕾 VOL 󰂯 📶 🔋 ⏻  │
+└─────────────────────────────────────────────────────────────┘
+```
 
-![Desktop Overview](screenshots/desktop.png)
-![Rofi Launcher](screenshots/rofi-launcher.png)
-![Window Management](screenshots/windows.png)
+## 🎯 Requirements
 
-</details>
+### Minimum System Requirements
+- **GPU**: Intel integrated or dedicated NVIDIA/AMD card
+- **RAM**: 8GB minimum, 16GB recommended
+- **Display**: Any resolution (optimized for 4K + 1080p dual setup)
+- **OS**: Linux with Wayland support
 
-## 🚀 Quick Start
+### Supported Distributions
+- ✅ **Arch Linux** (and derivatives: Manjaro, EndeavourOS, ArcoLinux)
+- ✅ **Debian** (and derivatives: Ubuntu, Pop!_OS, Linux Mint)
+- ✅ **Fedora** (and derivatives: Nobara, Silverblue)
+- ✅ **openSUSE** (Tumbleweed, Leap)
+- ✅ **Void Linux**
+- ✅ **Gentoo**
 
-### Prerequisites
+## 🚀 One-Line Installation
 
-- **Hyprland** 0.50.0 or newer
-- **Rofi** (for application launcher)
-- **Waybar** (status bar)
-- **Dunst** (notifications)
-- **swww** (wallpaper daemon)
-- **cliphist** (clipboard manager)
-- **brightnessctl** (brightness control)
-- **wpctl** (audio control)
-- **JetBrains Mono** and **SF Pro Display** fonts
+```bash
+curl -fsSL https://raw.githubusercontent.com/your-repo/koompi-hyprland/main/install.sh | bash
+```
 
-### Installation
+Or download and run manually:
+```bash
+git clone https://github.com/your-repo/koompi-hyprland.git
+cd koompi-hyprland
+chmod +x install.sh
+./install.sh
+```
 
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/yourusername/koompi-hyprland
-   cd koompi-hyprland
-   ```
+## 📋 Manual Installation
 
-2. **Backup your existing config:**
-   ```bash
-   mv ~/.config/hypr ~/.config/hypr.backup
-   ```
+### 1. Install Dependencies
 
-3. **Install the configuration:**
-   ```bash
-   ./install.sh
-   ```
+#### Arch Linux
+```bash
+sudo pacman -S hyprland waybar dunst hyprpaper kitty thunar firefox rofi wofi \
+               polkit-gnome xdg-desktop-portal-hyprland qt5-wayland qt6-wayland \
+               wl-clipboard cliphist grim slurp grimblast brightnessctl pamixer \
+               pavucontrol networkmanager bluez bluez-utils
+```
 
-4. **Reload Hyprland:**
-   Press `Super + Shift + C` or run `hyprctl reload`
+#### Debian/Ubuntu
+```bash
+sudo apt update
+sudo apt install hyprland waybar dunst hyprpaper kitty thunar firefox-esr \
+                 rofi polkit-gnome xdg-desktop-portal-wlr qtwayland5 \
+                 wl-clipboard grim slurp brightnessctl pulseaudio-utils \
+                 pavucontrol network-manager bluez
+```
+
+#### Fedora
+```bash
+sudo dnf install hyprland waybar dunst hyprpaper kitty thunar firefox \
+                 rofi polkit-gnome xdg-desktop-portal-hyprland qt5-qtwayland \
+                 qt6-qtwayland wl-clipboard grim slurp brightnessctl \
+                 pulseaudio-utils pavucontrol NetworkManager bluez
+```
+
+### 2. Install Configuration
+
+```bash
+# Backup existing config (if any)
+[ -d ~/.config/hypr ] && mv ~/.config/hypr ~/.config/hypr.backup.$(date +%s)
+
+# Clone and install
+git clone https://github.com/your-repo/koompi-hyprland.git ~/koompi-hyprland
+cp -r ~/koompi-hyprland/.config/hypr ~/.config/
+cp -r ~/koompi-hyprland/.config/waybar ~/.config/
+
+# Set permissions
+chmod +x ~/.config/hypr/scripts/*.sh
+chmod +x ~/.config/waybar/scripts/*.sh
+```
+
+### 3. Start Hyprland
+
+From TTY:
+```bash
+Hyprland
+```
+
+Or add to your display manager.
 
 ## ⌨️ Key Bindings
 
-### Essential Keys
-
-| Key Combination | Action |
-|----------------|--------|
-| `Super` | Open application launcher |
-| `Super + Return` | Open terminal |
-| `Super + Q` | Close window |
-| `Super + M` | Exit Hyprland |
-| `Super + Space` | Toggle floating |
-| `Super + F` | Toggle fullscreen |
+### Core Applications
+| Key | Action |
+|-----|--------|
+| `Super + Return` | Terminal (Kitty) |
+| `Super + E` | File Manager (Thunar) |
+| `Super + B` | Browser (Firefox) |
+| `Super + C` | Code Editor |
+| `Super + Space` | App Launcher (Rofi) |
+| `Super + Shift + Space` | Command Palette |
 
 ### Window Management
+| Key | Action |
+|-----|--------|
+| `Super + Q` | Close Window |
+| `Super + V` | Toggle Floating |
+| `Super + F` | Fullscreen |
+| `Super + H/J/K/L` | Move Focus (Vim-style) |
+| `Super + Shift + H/J/K/L` | Move Window |
+| `Super + Ctrl + H/J/K/L` | Resize Window |
 
-| Key Combination | Action |
-|----------------|--------|
-| `Super + [H/J/K/L]` | Focus window (Vim motions) |
-| `Super + Shift + [H/J/K/L]` | Move window |
-| `Super + Ctrl + [H/J/K/L]` | Resize window |
-| `Super + [1-9]` | Switch to workspace |
-| `Super + Shift + [1-9]` | Move window to workspace |
-| `Super + Tab` | Window switcher |
+### Workspaces
+| Key | Action |
+|-----|--------|
+| `Super + 1-9` | Switch to Workspace |
+| `Super + Shift + 1-9` | Move Window to Workspace |
+| `Super + S` | Scratchpad |
 
-### Productivity
-
-| Key Combination | Action |
-|----------------|--------|
-| `Super + V` | Clipboard history |
-| `Super + Period` | Emoji picker |
-| `Super + P` | Quick actions menu |
-| `Super + /` | Show keybind cheatsheet |
-| `Print` | Take screenshot |
-| `Ctrl + Super + T` | Change wallpaper |
-
-### Media & System
-
-| Key Combination | Action |
-|----------------|--------|
-| `Volume Keys` | Adjust volume |
-| `Brightness Keys` | Adjust brightness |
-| `Super + Shift + M` | Toggle mute |
-| `Ctrl + Alt + Delete` | Session menu |
-
-## 📁 Configuration Structure
-
-```
-~/.config/hypr/
-├── hyprland.conf          # Main configuration file
-├── hyprland/
-│   ├── keybinds.conf      # All keybindings
-│   ├── execs.conf         # Startup applications
-│   ├── env.conf           # Environment variables
-│   ├── rules.conf         # Window rules
-│   ├── visual-enhancements.conf  # Animations & effects
-│   └── colors.conf        # Color scheme
-├── custom/                # User customizations
-├── scripts/               # Helper scripts
-├── shaders/               # Custom shaders
-└── ~/.config/rofi/        # Rofi themes
-```
+### System
+| Key | Action |
+|-----|--------|
+| `Print` | Screenshot Area |
+| `Shift + Print` | Screenshot Screen |
+| `Super + Print` | Screenshot Window |
+| `XF86AudioRaise/Lower` | Volume Control |
+| `XF86MonBrightnessUp/Down` | Brightness Control |
 
 ## 🎨 Customization
 
-### Changing Colors
+### Color Themes
+The configuration uses **Catppuccin Mocha** colors:
+- **Blue**: `#89b4fa` (CPU, Bluetooth)
+- **Purple**: `#cba6f7` (Memory)
+- **Orange**: `#fab387` (Temperature, Brightness)
+- **Green**: `#a6e3a1` (Audio, Battery)
+- **Cyan**: `#94e2d5` (Network)
+- **Pink**: `#f5c2e7` (Power)
 
-Edit `hyprland/colors.conf` to change the color scheme. The default uses Catppuccin Mocha palette.
-
-### Custom Keybindings
-
-Add your keybindings to `custom/keybinds.conf`. They will override the defaults.
-
-### Window Rules
-
-Add window-specific rules to `custom/rules.conf`.
-
-### Rofi Themes
-
-Multiple Rofi themes are included:
-- `launchpad` - macOS-style app grid
-- `command-palette` - VS Code-style command palette
-- `spotlight` - macOS Spotlight-style search
-- `window-switcher` - Alt-tab replacement
-
-## 🔧 Troubleshooting
-
-### Launcher not working
-- Ensure Rofi is installed: `pacman -S rofi`
-- Check if themes are in `~/.config/rofi/`
-
-### Missing fonts
-Install required fonts:
+### Wallpaper
 ```bash
-# Arch Linux
-sudo pacman -S ttf-jetbrains-mono
-
-# For SF Pro Display, download from Apple or use Inter as alternative
-sudo pacman -S inter-font
+# Change wallpaper
+cp your-wallpaper.jpg ~/.config/hypr/.koompi/wall/
+# Update hyprpaper.conf with new path
 ```
 
-### Performance issues
-- Disable blur in `visual-enhancements.conf`
-- Reduce animation duration
-- Check GPU drivers are properly installed
+### Waybar Modules
+Edit `~/.config/waybar/config` to add/remove modules:
+```json
+"modules-right": [
+    "cpu",           // System monitoring
+    "memory", 
+    "temperature",
+    "battery",       // Power management
+    "network",       // Connectivity
+    "pulseaudio",
+    "custom/power"   // Custom modules
+]
+```
+
+## 🔧 Configuration Files
+
+```
+~/.config/hypr/
+├── hyprland.conf          # Main Hyprland config
+├── hyprpaper.conf         # Wallpaper configuration
+├── .koompi/
+│   ├── koompi-logo-40.png # Waybar logo
+│   └── wall/              # Wallpapers
+└── scripts/
+    └── *.sh              # Helper scripts
+
+~/.config/waybar/
+├── config                 # Waybar modules
+├── style.css             # Waybar styling
+└── scripts/
+    └── *.sh              # Waybar scripts
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### 1. Waybar not starting
+```bash
+# Check for errors
+waybar -l debug
+
+# Restart waybar
+pkill waybar && waybar &
+```
+
+#### 2. NVIDIA issues
+Add to `hyprland.conf`:
+```conf
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = WLR_NO_HARDWARE_CURSORS,1
+```
+
+#### 3. Screen tearing
+```conf
+general {
+    allow_tearing = true
+}
+```
+
+#### 4. High CPU usage
+Reduce animation complexity in `hyprland.conf`:
+```conf
+animations {
+    enabled = true
+    
+    animation = windows, 1, 4, default, slide
+    animation = border, 1, 1, default
+    animation = fade, 1, 6, default
+}
+```
+
+### Logs and Debug
+```bash
+# View Hyprland logs
+journalctl -f -u display-manager
+
+# Check Waybar status
+systemctl --user status waybar
+
+# Test configurations
+hyprctl reload
+```
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md).
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Development Setup
+```bash
+git clone https://github.com/your-repo/koompi-hyprland.git
+cd koompi-hyprland
+
+# Make changes and test
+./test-config.sh
+
+# Submit pull request
+```
 
 ## 📄 License
 
@@ -183,10 +269,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [Hyprland](https://hyprland.org/) - The amazing Wayland compositor
-- [Catppuccin](https://github.com/catppuccin) - Beautiful pastel color scheme
-- [KOOMPI](https://koompi.com/) - Inspiration for the configuration
+- **Hyprland** - Amazing Wayland compositor
+- **Waybar** - Highly customizable status bar
+- **Catppuccin** - Beautiful color palette
+- **KOOMPI Team** - Original design inspiration
+
+## 📞 Support
+
+- 🐛 **Issues**: [GitHub Issues](https://github.com/your-repo/koompi-hyprland/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/your-repo/koompi-hyprland/discussions)
+- 📧 **Email**: support@koompi.com
 
 ---
 
-Made with ❤️ for the Hyprland community
+**Made with ❤️ for the Linux community**
+
+> ⭐ If you find this project useful, please give it a star on GitHub!
