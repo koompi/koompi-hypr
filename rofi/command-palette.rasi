@@ -1,108 +1,96 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "";
+    drun-display-format: "{name}";
+    disable-history: false;
+    hover-select: true;
+}
+
 * {
-    bg: rgba(24, 24, 24, 0.95);
-    fg: #ffffff;
-    accent: #89b4fa;
-    urgent: #f38ba8;
+    bg-col: #1e1e1e;
+    border-col: #89b4fa;
+    selected-col: #313244;
+    fg-col: #cdd6f4;
+    grey: #6c7086;
+    
+    font: "SF Pro Display 14";
     background-color: transparent;
-    text-color: @fg;
+    text-color: @fg-col;
 }
 
 window {
+    transparency: "real";
+    background-color: @bg-col;
+    border: 3px;
+    border-color: @border-col;
+    border-radius: 20px;
+    width: 700px;
+    padding: 30px;
     location: center;
     anchor: center;
-    width: 700px;
-    background-color: @bg;
-    border-radius: 20px;
-    border: 2px solid @accent;
 }
 
 mainbox {
-    children: [inputbar, message, listview, mode-switcher];
+    background-color: transparent;
     spacing: 20px;
-    padding: 30px;
 }
 
 inputbar {
-    children: [prompt, entry];
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 15px 20px;
+    background-color: @border-col;
+    text-color: @bg-col;
+    padding: 15px;
+    border-radius: 15px;
+    children: [ prompt, entry ];
 }
 
 prompt {
-    enabled: true;
-    text-color: @accent;
-    font: "SF Pro Display 14";
-    padding: 0 10px 0 0;
+    background-color: transparent;
+    text-color: @bg-col;
+    font: "SF Pro Display Bold 14";
 }
 
 entry {
+    background-color: transparent;
+    text-color: @bg-col;
     placeholder: "Type command or search...";
-    placeholder-color: rgba(255, 255, 255, 0.3);
-    font: "SF Pro Display 14";
-    cursor: text;
+    placeholder-color: @bg-col;
 }
 
 listview {
+    background-color: transparent;
     columns: 1;
     lines: 8;
     spacing: 10px;
     scrollbar: false;
-    fixed-height: false;
-    dynamic: true;
 }
 
 element {
+    background-color: @selected-col;
+    text-color: @fg-col;
     padding: 15px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 2px solid transparent;
+    border-radius: 12px;
+    orientation: horizontal;
 }
 
-element normal.active,
-element alternate.active {
-    background-color: rgba(255, 255, 255, 0.05);
+element normal.normal {
+    background-color: @selected-col;
+    text-color: @fg-col;
 }
 
-element selected {
-    background-color: @accent;
-    text-color: @bg;
-    border: 2px solid @accent;
-}
-
-element-text {
-    font: "SF Pro Display 13";
-    vertical-align: 0.5;
+element selected.normal {
+    background-color: @border-col;
+    text-color: @bg-col;
 }
 
 element-icon {
-    size: 24px;
+    background-color: transparent;
+    size: 28px;
     margin: 0 15px 0 0;
 }
 
-mode-switcher {
-    spacing: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    text-color: @fg;
-    border-radius: 8px;
-}
-
-button selected {
-    background-color: @accent;
-    text-color: @bg;
-}
-
-message {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    border-radius: 10px;
-}
-
-textbox {
-    text-color: @fg;
-    font: "SF Pro Display 12";
+element-text {
+    background-color: transparent;
+    vertical-align: 0.5;
 }

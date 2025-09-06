@@ -1,24 +1,30 @@
+configuration {
+    modi: "window";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-window: "";
+    window-format: "{w} {c} {t}";
+    disable-history: false;
+    hover-select: true;
+}
+
 * {
-    /* Colors - Modern translucent design */
-    bg: rgba(20, 20, 20, 0.98);
-    bg-alt: rgba(40, 40, 40, 0.95);
-    fg: #ffffff;
-    accent: #89b4fa;
-    active: #a6e3a1;
-    inactive: #45475a;
-    urgent: #f38ba8;
+    bg-col: #1e1e1e;
+    border-col: #89b4fa;
+    selected-col: #313244;
+    fg-col: #cdd6f4;
+    grey: #6c7086;
     
-    /* Typography */
     font: "SF Pro Display 12";
-    
-    /* Layout */
     background-color: transparent;
-    text-color: @fg;
+    text-color: @fg-col;
 }
 
 window {
-    background-color: @bg;
-    border: 2px solid @accent;
+    transparency: "real";
+    background-color: @bg-col;
+    border: 2px;
+    border-color: @border-col;
     border-radius: 20px;
     width: 800px;
     padding: 30px;
@@ -32,78 +38,58 @@ mainbox {
 }
 
 inputbar {
-    background-color: @bg-alt;
-    text-color: @fg;
-    padding: 12px 20px;
+    background-color: @selected-col;
+    text-color: @fg-col;
+    padding: 15px;
     border-radius: 12px;
-    spacing: 12px;
     children: [ prompt, entry ];
 }
 
 prompt {
     background-color: transparent;
-    text-color: @accent;
-    font: "SF Pro Display Bold 12";
+    text-color: @border-col;
 }
 
 entry {
     background-color: transparent;
-    text-color: @fg;
+    text-color: @fg-col;
     placeholder: "Search windows...";
-    placeholder-color: @inactive;
+    placeholder-color: @grey;
 }
 
 listview {
     background-color: transparent;
     columns: 1;
     lines: 6;
-    spacing: 8px;
-    fixed-height: true;
-    scrollbar: true;
-}
-
-scrollbar {
-    width: 4px;
-    border: 0;
-    handle-width: 4px;
-    handle-color: @accent;
-    background-color: @inactive;
-    border-radius: 2px;
-    margin: 0 0 0 10px;
+    spacing: 10px;
+    scrollbar: false;
 }
 
 element {
-    background-color: @bg-alt;
-    text-color: @fg;
-    padding: 16px 20px;
+    background-color: @selected-col;
+    text-color: @fg-col;
+    padding: 15px;
     border-radius: 12px;
-    spacing: 12px;
     orientation: horizontal;
 }
 
-element selected {
-    background-color: @accent;
-    text-color: @bg;
+element normal.normal {
+    background-color: @selected-col;
+    text-color: @fg-col;
 }
 
-element urgent {
-    background-color: @urgent;
-    text-color: @bg;
-}
-
-element active {
-    border: 2px solid @active;
+element selected.normal {
+    background-color: @border-col;
+    text-color: @bg-col;
 }
 
 element-icon {
     background-color: transparent;
-    size: 32px;
-    cursor: inherit;
+    size: 28px;
+    margin: 0 15px 0 0;
 }
 
 element-text {
     background-color: transparent;
     vertical-align: 0.5;
-    highlight: inherit;
-    cursor: inherit;
 }
